@@ -1,0 +1,42 @@
+<ion-header>
+<!--  <ion-toolbar>-->
+<!--    <ion-title>welcome</ion-title>-->
+<!--  </ion-toolbar>-->
+</ion-header>
+
+<ion-content scroll-y="false">
+  <div class="top-wrapper">
+    <figure>
+      <img src="assets/images/logo.png" alt="logo" />
+    </figure>
+    <ion-text class="ion-text-center welcome" style="color: #fff">
+      <h2 class="no-pd no-mg">{{header[page][0]}}</h2>
+      <h3 class="no-mg no-pd">{{header[page][1]}}</h3>
+    </ion-text>
+  </div>
+  <div class="bottom-wrapper ion-padding">
+    <p class="ion-text-center bold"><ion-text color="primary">{{description[page]}}</ion-text></p>
+    <div class="d-flex direction ion-justify-content-between">
+      <p class="circle" [ngClass]="page == 1 ? 'circle-fill' : 'circle-outline'"></p>
+      <p class="circle" [ngClass]="page == 1 ? 'circle-outline' : 'circle-fill'"></p>
+    </div>
+    <ng-container *ngIf="page === 1; then page1; else page2"></ng-container>
+  </div>
+</ion-content>
+
+<ng-template #page1>
+
+  <div class="switch-page-wrapper">
+    <div class="d-flex ion-justify-content-end">
+      <app-primary-button (click)="page=2" text="NEXT" iconName="arrow-forward-outline"></app-primary-button>
+    </div>
+  </div>
+</ng-template>
+<ng-template #page2>
+  <div class="switch-page-wrapper">
+    <div class="d-flex ion-justify-content-between">
+      <app-primary-button (click)="page=1" text="BACK" fill="clear" color="secondary" iconName="arrow-backward-outline"></app-primary-button>
+      <app-primary-button routerLink="/auth/create-account/" text="START" iconName="arrow-forward-outline"></app-primary-button>
+    </div>
+  </div>
+</ng-template>

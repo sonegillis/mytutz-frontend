@@ -1,0 +1,44 @@
+ion-input {
+  --padding-start: 6px;
+}
+
+.active-input {
+  border: 2px solid var(--ion-color-primary);
+}
+
+.no-active-input {
+  border: 1px solid grey;
+}
+
+.label {
+  position: absolute;
+  left: 16px;
+  top: 10px;
+  color: grey;
+  transition: all 0.2s ease-in-out;
+  transition-property: left, top, color;
+}
+
+.input-wrapper {
+  padding: 0 2px;
+  position: relative;
+  margin: 24px 12px;
+  border-radius: 4px;
+}
+
+.float {
+  background: #fff;
+  color: var(--ion-color-primary);
+  padding: 4px 2px;
+  top: -11px;
+  left: 12px;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.password-eye {
+  position: absolute;
+  right: 2%;
+  bottom: 18%;
+  z-index: 55555;
+}

@@ -24,3 +24,39 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.no-pd {
+  padding: 0
+}
+
+.no-mg {
+  margin: 0
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.circle-outline {
+  border: 1px solid var(--ion-color-primary);
+}
+
+.circle-fill {
+  background: var(--ion-color-secondary);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.bold {
+  font-weight: bold;
+}
