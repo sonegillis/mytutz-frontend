@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="top-wrapper">
-    <figure>
+    <figure class="no-mg">
 <!--      <img src="assets/images/logo.png" alt="logo" />-->
     </figure>
   </div>
@@ -21,6 +21,18 @@
     <app-text-input label="Password" type="password"></app-text-input>
     <app-text-input label="Confirm Password" type="password"></app-text-input>
     <app-text-input label="Date of Birth"></app-text-input>
-    <app-primary-button color="secondary" text="CREATE NEW ACCOUNT"></app-primary-button>
+    <app-primary-button expand="full" color="secondary" text="CREATE NEW ACCOUNT"></app-primary-button>
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="footer-wrapper ion-text-center">
+      <p>By creating an account you accept MyTutz's</p>
+      <p>
+        <ion-text color="secondary">Terms of Service</ion-text> and
+        <ion-text color="secondary">Privacy Policy</ion-text>
+      </p>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

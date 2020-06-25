@@ -1,4 +1,4 @@
-<ion-button [fill]="fill" [color]="color">
+<ion-button [expand]="expand" [fill]="fill" [color]="color">
   <span class="text">{{text}}</span>
   <span *ngIf="iconName"><ion-icon [name]="iconName"></ion-icon></span>
   <ng-content *ngIf="!iconName"></ng-content>
