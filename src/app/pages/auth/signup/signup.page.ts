@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HelperFunctionsService} from '../../../services/helper-functions.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPage implements OnInit {
 
-  constructor() { }
+  constructor(private helper: HelperFunctionsService) { }
 
   ngOnInit() {
   }
 
+  initialSignUp() {
+    console.log('signup');
+    this.helper.displayAlert('Loading');
+  }
 }
