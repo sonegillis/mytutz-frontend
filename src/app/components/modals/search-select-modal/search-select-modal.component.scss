@@ -1,0 +1,21 @@
+ion-content {
+  background: transparent;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  .wrapper-inner {
+    background: #fff;
+    height: 500px;
+    width: 80%;
+    border-radius: 0;
+    .options {
+      overflow-y: scroll;
+      height: 450px;
+    }
+  }
+}

@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'create-account',
     component: SignupPage
+  },
+  {
+    path: 'tutor-signup',
+    loadChildren: () => import('./tutor-signup/tutor-signup.module').then( m => m.TutorSignupPageModule)
   }
 ];
 
