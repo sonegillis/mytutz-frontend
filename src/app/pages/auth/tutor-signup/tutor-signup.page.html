@@ -1,0 +1,14 @@
+<ion-content>
+  <div class="bottom-wrapper">
+    <app-select-dropdown
+            label="Q. University"
+            selectType="radio"
+            [data]="universities"
+    >
+    </app-select-dropdown>
+    <app-select-dropdown label="Q. Faculty"></app-select-dropdown>
+    <app-select-dropdown label="Q. Department"></app-select-dropdown>
+    <app-select-dropdown label="Q. Courses"></app-select-dropdown>
+    <app-primary-button (click)="completeSignUp()" expand="full" color="secondary" text="COMPLETE SIGNUP"></app-primary-button>
+  </div>
+</ion-content>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HelperFunctionsService} from '../../../services/helper-functions.service';
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPage implements OnInit {
 
-  constructor() { }
+  constructor(private helper: HelperFunctionsService,
+              private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
+  initialSignUp() {
+    console.log('signup');
+    this.helper.displayAlert('Loading');
+    this.navCtrl.navigateForward('auth/tutor-signup');
+  }
 }

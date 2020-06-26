@@ -4,11 +4,12 @@ import {TextInputComponent} from './text-input/text-input.component';
 import {IonicModule} from '@ionic/angular';
 import {FormsModule} from '@angular/forms';
 import {PrimaryButtonComponent} from './primary-button/primary-button.component';
+import {SelectDropdownComponent} from './select-dropdown/select-dropdown.component';
 
 
 
 @NgModule({
-  declarations: [TextInputComponent, PrimaryButtonComponent],
+  declarations: [TextInputComponent, PrimaryButtonComponent, SelectDropdownComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -16,7 +17,8 @@ import {PrimaryButtonComponent} from './primary-button/primary-button.component'
   ],
   exports: [
       TextInputComponent,
-      PrimaryButtonComponent
+      PrimaryButtonComponent,
+      SelectDropdownComponent
   ]
 })
 export class CommonsModule { }

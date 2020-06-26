@@ -10,7 +10,8 @@ export class PrimaryButtonComponent implements OnInit {
   @Input() iconName: any;
   @Input() fill = 'solid';
   @Input() color = 'primary';
-  @Input() expand = 'block';
+  @Input() expand;
+
   constructor() { }
 
   ngOnInit() {}
