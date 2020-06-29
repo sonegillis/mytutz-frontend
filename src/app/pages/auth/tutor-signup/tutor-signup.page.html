@@ -1,4 +1,9 @@
 <ion-content>
+  <div class="top-wrapper">
+    <figure class="no-mg">
+      <!--      <img src="assets/images/logo.png" alt="logo" />-->
+    </figure>
+  </div>
   <div class="bottom-wrapper">
     <app-select-dropdown
             label="Q. University"
@@ -6,9 +11,30 @@
             [data]="universities"
     >
     </app-select-dropdown>
-    <app-select-dropdown label="Q. Faculty"></app-select-dropdown>
-    <app-select-dropdown label="Q. Department"></app-select-dropdown>
-    <app-select-dropdown label="Q. Courses"></app-select-dropdown>
+    <app-select-dropdown
+            [data]="faculties"
+            label="Q. Faculty"
+            selectType="radio"
+    >
+    </app-select-dropdown>
+    <app-select-dropdown
+            [data]="departments"
+            label="Q. Department"
+            selectType="radio"
+    >
+    </app-select-dropdown>
+    <app-select-dropdown
+            [data]="courseCodes"
+            label="Q. Courses"
+            selectType="checkbox"
+    >
+    </app-select-dropdown>
+    <app-file-upload label="Upload CV">
+    </app-file-upload>
+    <app-file-upload label="Upload latest certificate">
+    </app-file-upload>
+    <app-file-upload label="Upload any other doc">
+    </app-file-upload>
     <app-primary-button (click)="completeSignUp()" expand="full" color="secondary" text="COMPLETE SIGNUP"></app-primary-button>
   </div>
 </ion-content>

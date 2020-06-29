@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'tutor-signup',
     loadChildren: () => import('./tutor-signup/tutor-signup.module').then( m => m.TutorSignupPageModule)
+  },
+  {
+    path: 'complete',
+    loadChildren: () => import('./complete/complete.module').then( m => m.CompletePageModule)
   }
 ];
 

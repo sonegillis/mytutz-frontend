@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ModalController, NavParams} from '@ionic/angular';
+import {ModalController, NavParams, Platform} from '@ionic/angular';
 import {DropdownData} from '../../../services/interface';
 
 @Component({
@@ -9,20 +9,48 @@ import {DropdownData} from '../../../services/interface';
 })
 export class SearchSelectModalComponent implements OnInit {
   header: string;
-  selectionType: string;
+  selectType: string;
   data: Array<DropdownData>;
+  filteredData: Array<DropdownData>;
+  selectedRadio: string;
   constructor(private navParams: NavParams,
+              private platform: Platform,
               private modalCtrl: ModalController) {
     const data = this.navParams.data;
     this.header = data.label;
-    this.selectionType = data.selectionType;
+    this.selectType = data.selectType;
     this.data = data.data as Array<DropdownData>;
-    console.log(data);
+    this.filteredData = this.data;
+    if (this.selectType === 'radio') {
+      this.selectedDefaultRadio();
+    }
   }
 
   ngOnInit() {}
 
   dismissModal() {
-    this.modalCtrl.dismiss();
+    if (this.selectType === 'radio') {
+      for (const item of this.data) {
+        if (item.id === Number.parseInt(this.selectedRadio, 10)) {
+          item.selected = true;
+          break;
+        }
+      }
+    }
+    this.modalCtrl.dismiss(this.data);
+    window.history.back();
+  }
+
+  filterData($event: CustomEvent) {
+    const value = $event.detail.value;
+    this.filteredData = this.data.filter(item => item.name.toLocaleLowerCase().indexOf(value.toLowerCase()) !== -1);
+  }
+
+  selectedDefaultRadio() {
+    for (const item of this.data) {
+      if (item.selected === true) {
+        this.selectedRadio = item.id.toString();
+      }
+    }
   }
 }

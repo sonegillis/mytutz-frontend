@@ -11,7 +11,8 @@ import {DropdownData} from '../../../services/interface';
 export class SelectDropdownComponent implements OnInit {
   @Input() label = '';
   @Input() selectType: string;
-  @Input() data: Array<DropdownData>
+  @Input() data: Array<DropdownData>;
+  value = '';
   constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {}
@@ -28,6 +29,23 @@ export class SelectDropdownComponent implements OnInit {
           }
         }
     );
+    window.history.pushState('', '');
+    modal.onDidDismiss().then(resp => {
+        if (resp.data) { this.setDropDownValue(resp.data); }
+    });
     await modal.present();
+  }
+
+  setDropDownValue(data) {
+      this.value = '';
+      for (const item of data) {
+          if (this.selectType === 'checkbox' && item.selected) {
+              this.value += item.name;
+              this.value += ', ';
+          } else if (item.selected) {
+              this.value = item.name;
+              break;
+          }
+      }
   }
 }

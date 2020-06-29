@@ -1,5 +1,8 @@
 {
   "name": "mytutz-frontend",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">mytutz-frontend</string>
+    <string name="title_activity_main">mytutz-frontend</string>
+    <string name="package_name">com.mytutz</string>
+    <string name="custom_url_scheme">com.mytutz</string>
+</resources>
