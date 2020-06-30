@@ -1,4 +1,4 @@
-<ion-content>
+<ion-content fullscreen>
   <div class="top-wrapper">
     <figure class="no-mg">
       <!--      <img src="assets/images/logo.png" alt="logo" />-->
@@ -9,7 +9,7 @@
     <p>Your application has been submitted</p>
     <p>We will now review your application and contact you by email within 3 business days.</p>
     <h3>THANK YOU</h3>
-    <p>for choosing my tutz</p>
-    <app-primary-button expand="full" fill="solid" text="Go to Dashboard"></app-primary-button>
+  <p>for choosing my tutz</p>
+    <app-primary-button (click)="goToDashboard()" expand="full" fill="solid" text="Go to Dashboard"></app-primary-button>
   </section>
 </ion-content>
